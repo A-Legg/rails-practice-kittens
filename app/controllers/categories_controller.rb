@@ -4,4 +4,8 @@ class CategoriesController < ApplicationController
     @categories = Category.order(:name)
   end
 
+  def new
+    @category = Category.new
+  end
+
 end

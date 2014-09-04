@@ -1,0 +1,13 @@
+<h1>Category</h1>
+
+
+<%= image_tag @kitten.image %>
+
+<%= form_for @categories do |f| %>
+
+<%= f.select :name, options_from_collection_for_select(@categories, 'id', 'name') %>
+
+<%= f.submit "Add Category", '/kittens/:id/edit' %>
+
+  <% end %>
+<%= params %>
