@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
   get "signout" => "sessions#destroy", as: :signout
-  get "/categories" => "categories#index", as: :categories
+  resources "kittens" do
+    resources "categorizations"
+  end
 
-  get "/kittens/:id/edit" => "kittens#edit"
-  post "/kittens/:id/edit" => "kittens#update"
-
+  resources "categories"
 
 
 end
